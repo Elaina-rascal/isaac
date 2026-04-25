@@ -15,9 +15,10 @@ services:
       - /dev:/dev
       - ./..:/home/Elaina/isaac
       # 挂载缓存目录
-      - ./../cache/cache/main:/home/Elaina/.cache
-      - ./../cache/cache/computecache:/home/Elaina/.nv/ComputeCache
-      - ./../cache/data:/home/Elaina/.local/share/ov/data
+      - ./../cache/cache:/isaac-sim/kit/cache
+      - ./../cache/logs:/isaac-sim/kit/logs
+      - ./../cache/data:/isaac-sim/kit/data
+      # - ./../cache/cache/kit:/isaac-sim/kit/cache
     runtime: "nvidia"
     tty: true
     network_mode: "host"
@@ -25,4 +26,5 @@ services:
     privileged: true
     stdin_open: true
     working_dir: "/home/Elaina/isaac" # 指定默认工作目录
-    entrypoint: [ "sh", "-c", "sudo chown Elaina /isaac-sim && zsh" ]
+    entrypoint: [ "sh", "-c", " sudo usermod -aG isaac-sim Elaina && sudo chown -R Elaina /isaac-sim/kit &&zsh" ]
+
