@@ -11,13 +11,13 @@ services:
       # - ROS_LOCALHOST_ONLY=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /home/${USER}/.Xauthority:/isaac-sim/.Xauthority
+      # - /home/${USER}/.Xauthority:/isaac-sim/.Xauthority
       - /dev:/dev
       - ./..:/home/Elaina/isaac
       # 挂载缓存目录
-      - ./../cache/cache/main:/isaac-sim/.cache
-      - ./../cache/cache/computecache:/isaac-sim/.nv/ComputeCache
-      - ./../cache/data:/isaac-sim/.local/share/ov/data
+      - ./../cache/cache/main:/home/Elaina/.cache
+      - ./../cache/cache/computecache:/home/Elaina/.nv/ComputeCache
+      - ./../cache/data:/home/Elaina/.local/share/ov/data
     runtime: "nvidia"
     tty: true
     network_mode: "host"
