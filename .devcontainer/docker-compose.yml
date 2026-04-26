@@ -1,6 +1,6 @@
 services:
   gpu-service:
-    image: elainasuki/other:isaac
+    image: elainasuki/other:isaac-uv
     container_name: isaac
     environment:
       - DISPLAY=${DISPLAY:-:0}
@@ -26,5 +26,4 @@ services:
     privileged: true
     stdin_open: true
     working_dir: "/home/Elaina/isaac" # 指定默认工作目录
-    entrypoint: [ "sh", "-c", " sudo usermod -aG isaac-sim Elaina && sudo chown -R Elaina /isaac-sim/kit &&zsh" ]
-
+    entrypoint: [ "sh", "-c", "zsh" ]

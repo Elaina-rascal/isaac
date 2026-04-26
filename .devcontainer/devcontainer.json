@@ -7,9 +7,9 @@
     "shutdownAction": "stopCompose",
     "customizations": {
         "vscode": {
-            "settings": {
-                "terminal.integrated.shell.linux": "zsh"
-            },
+            // "settings": {
+            // "terminal.integrated.shell.linux": "zsh"
+            // },
             "extensions": [
                 "cschlosser.doxdocgen",
                 "augustocdias.tasks-shell-input",
