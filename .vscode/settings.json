@@ -1,4 +1,13 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python.analysis.extraPaths": []
+    "python.analysis.extraPaths": [
+        "~/IsaacLab/source/isaaclab",
+        "~/IsaacLab/source",
+        // 重点：Pip 安装的 Isaac Sim 扩展路径
+        "/usr/local/lib/python3.11/site-packages/isaacsim/exts",
+        "/usr/local/lib/python3.11/site-packages/isaacsim/exts/omni.isaac.core"
+    ],
+    // 开启自动索引，这对 Isaac Sim 这种巨型库很重要
+    "python.analysis.indexing": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.languageServer": "Pylance"
 }

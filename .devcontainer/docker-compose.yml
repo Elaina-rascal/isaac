@@ -15,10 +15,9 @@ services:
       - /dev:/dev
       - ./..:/home/Elaina/isaac
       # 挂载缓存目录
-      - ./../cache/cache:/isaac-sim/kit/cache
-      - ./../cache/logs:/isaac-sim/kit/logs
+      - ./../cache/cache:/home/Elaina/.cache
       - ./../cache/data:/isaac-sim/kit/data
-      # - ./../cache/cache/kit:/isaac-sim/kit/cache
+      
     runtime: "nvidia"
     tty: true
     network_mode: "host"
