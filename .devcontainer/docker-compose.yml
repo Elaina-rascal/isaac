@@ -1,9 +1,9 @@
 services:
   gpu-service:
-    image: elainasuki/other:isaac
+    image: elainasuki/other:isaac-uv
     container_name: isaac
     environment:
-      - DISPLAY=${DISPLAY}
+      - DISPLAY=${DISPLAY:-:0}
       - OMP_WAIT_POLICY=passive
       - TERM=xterm-256color
       - ACCEPT_EULA=Y
@@ -11,13 +11,13 @@ services:
       # - ROS_LOCALHOST_ONLY=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /home/${USER}/.Xauthority:/isaac-sim/.Xauthority
+      # - /home/${USER}/.Xauthority:/isaac-sim/.Xauthority
       - /dev:/dev
       - ./..:/home/Elaina/isaac
       # 挂载缓存目录
-      - ./../cache/cache/main:/isaac-sim/.cache
-      - ./../cache/cache/computecache:/isaac-sim/.nv/ComputeCache
-      - ./../cache/data:/isaac-sim/.local/share/ov/data
+      - ./../cache/cache:/home/Elaina/.cache
+      - ./../cache/data:/isaac-sim/kit/data
+      
     runtime: "nvidia"
     tty: true
     network_mode: "host"
@@ -25,4 +25,4 @@ services:
     privileged: true
     stdin_open: true
     working_dir: "/home/Elaina/isaac" # 指定默认工作目录
-    entrypoint: [ "sh", "-c", "sudo chown Elaina /isaac-sim && zsh" ]
+    entrypoint: [ "sh", "-c", "zsh" ]

@@ -1,0 +1,29 @@
+{
+    "name": "isaac",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "gpu-service",
+    "workspaceFolder": "/home/Elaina/isaac",
+    "remoteUser": "Elaina",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+        "vscode": {
+            // "settings": {
+            // "terminal.integrated.shell.linux": "zsh"
+            // },
+            "extensions": [
+                "cschlosser.doxdocgen",
+                "augustocdias.tasks-shell-input",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "ms-python.vscode-pylance",
+                "donjayamanne.githistory",
+                "mhutchie.git-graph",
+                "ms-vscode.cmake-tools",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ]
+        },
+        "jetbrains": {
+            "extensions": []
+        }
+    }
+}
